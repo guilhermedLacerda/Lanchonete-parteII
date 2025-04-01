@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Cliente extends Model
+class Cliente extends Authenticatable
 {
     use HasFactory;
 
@@ -15,6 +15,13 @@ class Cliente extends Model
         'telefone',
         'cpf',
         'email',
-        'senha'
+        'password' // Laravel espera "password" e não "senha"
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class); // Um cliente pertence a um usuário
+    }
+
+
 }

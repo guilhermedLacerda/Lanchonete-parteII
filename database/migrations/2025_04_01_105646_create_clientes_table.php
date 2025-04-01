@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('cpf')->nullable(false)->unique();
             $table->string('email')->nullable(false)->unique();
             $table->string('senha')->nullable();
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade'); // Chave estrangeira correta
             $table->timestamps();
         });
     }
@@ -30,4 +31,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('clientes');
     }
+
 };

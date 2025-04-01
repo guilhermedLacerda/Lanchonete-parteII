@@ -39,6 +39,7 @@ class Create extends Component
         'telefone.regex' => 'Formato de telefone inválido.',
 
         'cpf.required' => 'CPF é obrigatório.',
+
         'cpf.unique' => 'Este CPF já está cadastrado.',
 
         'email.required' => 'E-mail é obrigatório.',
