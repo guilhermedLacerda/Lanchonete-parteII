@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Livewire\Funcionario;
+namespace App\Livewire\Admin\Funcionario;
 
 use App\Models\Funcionario;
-use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
+use Livewire\Component;
 
-class Create extends Component
+class FuncionarioCreate extends Component
 {
+
     public $nome;
     public $cpf; // único
     public $email;
@@ -58,6 +59,6 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.funcionario.create');
+        return view('livewire.admin.funcionario.funcionario-create');
     }
 }

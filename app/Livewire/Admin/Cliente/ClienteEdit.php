@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Livewire\Cliente;
+namespace App\Livewire\Admin\Cliente;
 
-use App\Models\Cliente;
 use Livewire\Component;
 
-class Edit extends Component
+class ClienteEdit extends Component
 {
+
     public $clienteId;
     public $nome;
     public $endereco;
@@ -61,36 +61,6 @@ class Edit extends Component
 
     public function render()
     {
-        return view('livewire.cliente.edit');
-    }
-
-    public function mount($id){
-        $cliente = Cliente::find($id);
-
-        if($cliente) {
-            $this->clienteId = $cliente->id;
-            $this->nome = $cliente->nome;
-            $this->endereco = $cliente->endereco;
-            $this->telefone = $cliente->telefone;
-            $this->cpf = $cliente->cpf;
-            $this->email = $cliente->email;
-            $this->senha = $cliente->senha;
-        }
-    }
-
-    public function salvar(){
-        $this->validate();
-
-        $cliente = Cliente::find($this->clienteId);
-        $cliente->nome = $this->nome;
-        $cliente->endereco = $this->endereco;
-        $cliente->telefone = $this->telefone;
-        $cliente->cpf = $this->cpf;
-        $cliente->email = $this->email;
-        $cliente->senha = $this->senha;
-
-        $cliente->save();
-
-        session()->flash('success', 'Cliente Atualizado');
+        return view('livewire.admin.cliente.cliente-edit');
     }
 }

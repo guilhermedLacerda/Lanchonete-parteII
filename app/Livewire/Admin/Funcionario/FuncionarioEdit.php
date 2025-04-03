@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Livewire\Funcionario;
+namespace App\Livewire\Admin\Funcionario;
 
 use App\Models\Funcionario;
 use Livewire\Component;
 
-class Edit extends Component
+class FuncionarioEdit extends Component
 {
+
     public $funcionarioId;
     public $nome;
     public $cpf;
@@ -48,11 +49,6 @@ class Edit extends Component
         $this->dispatch('hideModal');
     }
 
-    public function render()
-    {
-        return view('livewire.funcionario.edit');
-    }
-
     public function mount($id){
         $funcionario = Funcionario::find($id);
 
@@ -77,5 +73,10 @@ class Edit extends Component
         $funcionario->save();
 
         session()->flash('success', 'Funcionário atualizado com sucesso!');
+    }
+
+    public function render()
+    {
+        return view('livewire.admin.funcionario.funcionario-edit');
     }
 }
