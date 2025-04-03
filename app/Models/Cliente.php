@@ -15,7 +15,7 @@ class Cliente extends Authenticatable
         'telefone',
         'cpf',
         'email',
-        'password' // Laravel espera "password" e não "senha"
+        'senha' // Laravel espera "password" e não "senha"
     ];
 
     public function user()
